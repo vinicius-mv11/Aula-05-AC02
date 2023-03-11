@@ -15,10 +15,10 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="#/contatos">Contatos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="#/cursos">Cursos <span class="sr-only">(current)</span></a>
           </li>
         </ul>
@@ -30,17 +30,19 @@
   </div>
 </header>
 
-<main class='mt-2'>
-  <button class="btn btn-primary" ng-click='incrementa()'>Novo</button>
+<main>
+  <button class="btn btn-primary mt-2" ng-click='incrementa()'>Novo</button>
 <!--   <input ng-model="filtro" type="search" placeholder="Digite parte do nome"> -->
-  <p>Contatos cadastrados: {{total}}</p>
+  <p>Cursos cadastrados: {{total}}</p>
   <div class="table-responsive">
-  <table class="table table-hover">
-    <tr><th>NOME</th><th>E-MAIL</th><th class="text-center">Ação</th></tr>
-    <tr ng-repeat="contato in contatos | filter: filtro">
-    	<td><a>{{contato.nome}}</a></td><td>{{contato.email}}</td>
-    	<td class="text-center"><button class="btn btn-warning">Remover</buttom></td>
-    </tr>
-  </table>  
+    <table class="table table-hover">
+      <tr><th>CURSO</th><th>CORDENADOR</th><th class="text-center">Ação</th></tr>
+      <tr ng-repeat="curso in cursos | filter: filtro">
+        <td><a>{{curso.curso}}</a></td><td>{{curso.cordenador}}</td>
+        <td class="text-center"><button class="btn btn-warning">Remover</buttom></td>
+      </tr>
+    </table>
+  </div>
 </main>
+
 
